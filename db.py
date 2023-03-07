@@ -27,9 +27,9 @@ def add(game):
     model.session.commit()
 
 
-def update_title(title, games):
+def update_title(new_title, title, games):
     game = model.session.query(games).filter(games.title == title).first()
-    game.title = title
+    game.title = new_title
     model.session.commit()
 
 

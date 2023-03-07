@@ -33,7 +33,8 @@ while True:
         col = input("What column would you like to update? ")
         title = input("What is the title of the game you are updating? ")
         if "title" in col:
-            db.update_title(title, model.Games)
+            new_title = input("What is the new title of the game? ")
+            db.update_title(new_title, title, model.Games)
         elif "started" in col:
             stat = input("What is the new status of started for this game? ")
             status = stat.lower() == "true"
