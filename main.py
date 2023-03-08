@@ -2,7 +2,7 @@ import db
 import model
 from tabulate import tabulate
 
-
+# Endless loop for user to run as many queries as they want, breaks when they say no to running another query.
 while True:
 
     query = input("Please choose either select, add, update, or delete. ")
