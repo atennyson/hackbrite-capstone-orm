@@ -1,11 +1,19 @@
-# CLI Database Query Tool
+# Database Query Tool
 
-### YOU WILL NEED YOUR OWN POSTGRES DATABASE TO USE THIS CLI TOOL
+### YOU WILL NEED YOUR OWN POSTGRES DATABASE TO USE THIS TOOL
 
-This is a CLI tool I created that can query my database remotely. Currently doesn't work with any other database. (WIP)
+This is a tool I created that can query my database remotely. It runs completely from the command line, currently doesn't work with any other database out of box. (WIP)
 
-Store your database info into these variables as we will use these to build the connection string in ```make_connection```
+## If you want to alter the code to work with your database:
+Store your database info into these variables as we will use these to build the connection string in model.py
+You will then have to update the Games object to suit your database's table structure. If you have multiple tables you will need multiple objects.
+Make sure to change the object calls in main.py and db.py, again this is a WIP, the future goal is to have this tool work with any database without code alterations.
 
+## Preparing the tool:
+You will need to run ```pip install -r requirements.txt``` to make sure you have all the modules needed to run this tool. You will also need to have a venv setup for this tool's directory if you don't want the dependencies in your global environment.
+
+## Running the tool:
+To run, make sure you are in the directory where you saved the program and in the command line run ```python3 main.py```
 Upon execution of the program it will ask you to enter a which type of SQL query you want to run, if invalid the program will error out and end (WIP). Upon entering "select", as long
 as the DB connection and query are valid, the tool will stdout the data you requested to the command line. It then will ask if you would like to save as a csv file.
 Either type Y for yes or N for no.
